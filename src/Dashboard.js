@@ -4,21 +4,21 @@
 - changes recorded on this component should update the information shown by the `Display` component.
 */
 
-import React from 'react';
+import React from "react";
 
-// four buttons: strike, ball, foul, hit. 
-// Counter functions for balls and strikes. 
-// Current count of each sent to Display.js as props. 
+// four buttons: strike, ball, foul, hit.
+// Counter functions for balls and strikes.
+// Current count of each sent to Display.js as props.
 
-function Dashboard(){
-    return(
-<>
-            <button>Strike</button>
-            <button>Ball</button>
-            <button>Foul</button>
-            <button>Hit</button>
-</>
-    )
+function Dashboard() {
+  return (
+    <>
+      <button>Strike</button>
+      <button>Ball</button>
+      <button>Foul</button>
+      <button>Hit</button>
+    </>
+  );
 }
 
 export default Dashboard;
