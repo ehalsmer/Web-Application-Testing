@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Display from "./Display";
-import { Button } from 'semantic-ui-react';
-import { Container, Header, Segment } from 'semantic-ui-react';
+import { Button, Segment, Divider } from 'semantic-ui-react';
 
 
 function Dashboard() {
@@ -32,20 +31,26 @@ function Dashboard() {
   }, [strikes, balls]);
 
   return (
-    <Segment compact padded="very" raised>
+    <Segment style={dashboardSegment} compact padded="very" raised>
       <div>
           <h1>Dashboard</h1>
         {console.log("Strikes, Balls", strikes, balls)}
-        <Button onClick={handleStrike} data-testid="Button">Strike</Button>
-        <Button onClick={handleBall} data-testid="Button">Ball</Button>
-        <Button onClick={handleFoul} data-testid="Button">Foul</Button>
-        <Button onClick={handleHit} data-testid="Button">Hit</Button>
+        <Button inverted basic color='red' onClick={handleStrike} data-testid="Button">Strike</Button>
+        <Button inverted basic color='blue' onClick={handleBall} data-testid="Button">Ball</Button>
+        <Button inverted basic color='orange' onClick={handleFoul} data-testid="Button">Foul</Button>
+        <Button inverted basic color='green' onClick={handleHit} data-testid="Button">Hit</Button>
       </div>
+      <Divider/>
       <div>
         <Display balls={balls} strikes={strikes}/>
       </div>
     </Segment>
   );
+}
+
+const dashboardSegment = {
+        backgroundColor: "rgba(19, 19, 62, 0.8)",
+        color: "#e7e7eb"
 }
 
 export default Dashboard;
